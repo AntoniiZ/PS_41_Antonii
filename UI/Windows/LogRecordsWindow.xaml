@@ -1,0 +1,26 @@
+﻿<Window x:Class="UI.Windows.LogRecordsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Windows"
+        Title="LogRecordsWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        xmlns:local2="clr-namespace:UI.Components"
+        xmlns:vm="clr-namespace:UI.ViewModels"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <vm:ViewModelBase x:Key="viewModel"/>
+    </Window.Resources>
+    
+    <Grid>
+        <local2:LogsList x:Name="logsList" Padding="1"/>
+        <Button Content="Wipe logs"
+                Height="25" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Name="wipeLogsButton" 
+                Width="100"
+                Command="{Binding Path=WipeLogsCommand, 
+            Source={StaticResource viewModel}}"/>
+    </Grid>
+
+</Window>

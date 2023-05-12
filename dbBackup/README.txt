@@ -1,0 +1,1 @@
+Сложете 'Welcome.db' файла на Desktop
